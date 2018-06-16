@@ -1,0 +1,50 @@
+#include<stdio.h>
+#include<conio.h>
+#define SIZE 10
+int a[SIZE];
+int top=-1;
+
+void push(int b)
+{
+  if(top==SIZE-1)
+  {
+     printf("overflow");
+   }
+   else
+   {
+    top=top+1;
+    a[top]=b;
+    }
+ }
+ 
+ void pop()
+ {
+   if(top==-1)
+   {
+     printf("underflow");
+   }
+   else
+   {
+     int n=a[top];
+     top=top-1;
+     return n;
+    }
+  }
+   void display()
+   {
+    int i;
+    for(i=0;i<=top;i++)
+      printf("%d \n",a[i]);
+    }
+    int main()
+    {
+    push(10);
+    push(89);
+    push(23);
+    push(67);
+    pop();
+    display();
+    
+   }
+   
+  
